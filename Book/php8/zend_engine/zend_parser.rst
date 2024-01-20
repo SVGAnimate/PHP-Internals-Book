@@ -3,7 +3,7 @@ Parsing capability
 
 In this chapter you'll learn the state of the art of PHP parsers. You'll learn about the PHP generating parser process, how and when to manage
 configuration, the different parser parameters you can use or the different globals structure you can use to actively change PHP's
-parser machinery. You'll design PHP DocBlock extension to provide them through your extension, and you'll play
+parser behavior. You'll design PHP DocBlock extension to provide them through your parser, and you'll play
 with debug display.
 
 Contents:
