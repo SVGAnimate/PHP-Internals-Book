@@ -22,7 +22,7 @@ Note than ``$(srcdir)`` if définied in ``configure.ac``; ``$(RE2C)`` and ``$(RE
 
 Generating lexer/parser
 =============
-Yes, once your <php-src>/Zend/Makefile.frag is up to date you must relaunch <php-src>$ ./buildconf <php-build>$ <php-src>/configure
+Yes, once your ``<php-src>/Zend/Makefile.frag`` is up to date you must relaunch ``<php-src>$ ./buildconf`` and ``<php-build>$ <php-src>/configure``
 
 Now, every time you run the compilation make will automatically generate the parser as needed.
 
