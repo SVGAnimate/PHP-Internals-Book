@@ -22,6 +22,12 @@ Note than ``$(srcdir)`` if définied in ``configure.ac``; ``$(RE2C)`` and ``$(RE
 
 > Normally everything is already done
 
+In the current state
+=============
+Makefile.frag do certain operation than fix issue of conception. ``ZEND_API zendlex()``; just add zend_language.h
+You have a big responsibility to delegate to him
+
+
 Generating lexer/parser
 =============
 Yes, once your ``<php-src>/Zend/Makefile.frag`` is up to date you must relaunch ``<php-src>$ ./buildconf`` and ``<php-build>$ <php-src>/configure``
