@@ -1,4 +1,4 @@
-Parsing capability
+Parsing a...z
 =================
 
 In this chapter you'll learn the state of the art of PHP parsers. You'll learn about the PHP generating parser process, how and when to manage
