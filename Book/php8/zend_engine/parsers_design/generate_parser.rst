@@ -16,7 +16,7 @@ This is what your Makefile.frag should contain
 	    -o $(srcdir)/zend_language_scanner.c \
 	    $(srcdir)/zend_language_scanner.l
 
-Note than $(srcdir) if définied in configure.ac; $(RE2C) and $(RE2C_FLAGS) also is defined in configure.ac throu the macro PHP_SUBSET
+Note than ``$(srcdir)`` if définied in ``configure.ac``; ``$(RE2C)`` and ``$(RE2C_FLAGS)`` also is defined in configure.ac throu the macro ``PHP_SUBSET``
 
 > Normally everything is already done
 
