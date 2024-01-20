@@ -1,5 +1,7 @@
 Generate Makefile.frag
 =============
+https://www.npopov.com/2012/07/27/How-to-add-new-syntactic-features-to-PHP.html
+
 
 Because the generation of lexer/parser call dependant tools of the OS( sed, grep) than is not present in Windows(findstr, powershell) 
 The choice of a Makefile.frag generation script was made to limit the number of tools involved in the PHP build toolchain.
