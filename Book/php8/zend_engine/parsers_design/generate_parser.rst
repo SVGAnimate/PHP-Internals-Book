@@ -39,3 +39,61 @@ Now, every time you run the compilation make will automatically generate the par
 
   ext/json/parser.y
   ext/json/lexer.l
+
+Advanced skill
+=============
+You can go further by creating an m4 macro in <php-src>/build/php.m4
+It will unify/simplify the build toolchain.
+
+Customize the parser.y through <php-src>/configure --legacy=[backwards|compatibility|2024|modern] --product=[cli|fpm|gui|library] --env=[production|desktop] --target=[release|debug]
+
+	dnl
+	dnl PHP_BISON([VERBOSE])
+	dnl
+	dnl Enable it in desktop environement (disabled by default for small performance reasons)
+	dnl Search for zend_language_parser.y and optionally add directive to implement syntaxe error reporting
+	dnl Assume Error: type error: in file on line at column
+	dnl Provide: extra information to detec error.
+	dnl
+	AC_DEFUN([PHP_BISON], [
+	    # on Linux
+	    AC_PATH_PROGS([GREP_COMMAND], [grep], [not-found])
+	    # on windows
+	    AC_PATH_PROGS([FINDSTR_COMMAND], [findstr], [not-found])
+	    
+	    # $verbose=$1[no|yes], $pattern=$2, $parser_y=$3
+	    AC_MSG_CHECKING([whether to stamp zend_language_parser.stamp])
+	    
+	    if test "x$GREP_COMMAND" != "xnot-found"; then
+	        #result=`m4_esyscmd([grep -q "$2" "$3.y" && echo "echo found" || echo "echo unknow"])`
+	        result=$(grep -q $2 $3.y && echo "found" || echo "unknow")
+	        
+	        if test "x$result" = "xfound"; then
+	            if test "x$1" = "xno"; then
+	                AC_MSG_RESULT([yes])
+	                #set -x
+	                #`syscmd([touch "$3.stamp"])`
+	                touch "$3.stamp"
+	                #set +x
+	            else
+	                AC_MSG_RESULT([no])
+	            fi
+	        else
+	            if test "x$1" = "xno"; then
+	                AC_MSG_RESULT([no])
+	            else
+	                AC_MSG_RESULT([yes])
+	                #set -x
+	                #`syscmd([touch "$3.stamp"])`
+	                touch "$3.stamp"
+	                #set +x
+	            fi
+	        fi
+	    fi
+	    
+	    if test "x$FINDSTR_COMMAND" != "xnot-found"; then
+	        AC_MSG_RESULT(["--enable-verbose is not implemented in windows"])
+	        #result=`m4_esyscmd([findstr /L "$2" "$3" >nul 2>&1 && echo "echo found" || echo "echo unknow"])`
+	        # sed ? PowerShell ?
+	    fi
+	])
