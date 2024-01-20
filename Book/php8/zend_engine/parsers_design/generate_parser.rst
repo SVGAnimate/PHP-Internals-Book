@@ -45,7 +45,8 @@ Advanced skill
 You can go further by creating an m4 macro in <php-src>/build/php.m4
 It will unify/simplify the build toolchain.
 
-Customize the parser.y through <php-src>/configure --legacy=[backwards|compatibility|2024|modern] --product=[cli|fpm|gui|library] --env=[production|desktop] --target=[release|debug]
+Customize the parser.y through ``<php-src>/configure --legacy=modern`` without having to restart build
+Or backwards-compatibility or what you whant ... --product=[cli|fpm|gui|library] --env=[production|desktop] --target=[release|debug]
 
 	dnl
 	dnl PHP_BISON([VERBOSE])
