@@ -8,7 +8,7 @@ This is why you don't need Re2c/Bison if you compile PHP from a package source h
 
 <php-src>/scripts/dev/genfiles
 
-This is what your Makefile.frag should contain
+This is what your ``<php-src>/Zend/Makefile.frag`` should contain
 
   $(srcdir)/zend_language_scanner.c: $(srcdir)/zend_language_scanner.l $(srcdir)/zend_language.h
 	$(RE2C) $(RE2C_FLAGS) --no-generation-date --case-inverted --bit-vectors --flex-syntax \
