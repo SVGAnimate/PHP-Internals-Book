@@ -44,9 +44,9 @@ In php, extensions also use parser
   - ext/json/parser.y
   - ext/json/lexer.l
 
-There are even extensions that use the Zend Engine language lexer
+There are even extensions that use the Zend Engine language scanner[Aka lexer]
 
-- ext/tokenizer
+  - ext/tokenizer
 
 
 Advanced skill
