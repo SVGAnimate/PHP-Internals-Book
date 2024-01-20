@@ -4,7 +4,7 @@ Generate Makefile.frag
 Because the generation of lexer/parser call dependant tools of the OS( sed, grep) than is not present in Windows(findstr, powershell) 
 The choice of a Makefile.frag generation script was made to limit the number of tools involved in the PHP build toolchain.
 
-This is why you don't need Re2c/Bison if you compile PHP from a package https://www.php.net/downloads
+This is why you don't need Re2c/Bison if you compile PHP from a package source https://www.php.net/downloads
 
 <php-src>/scripts/dev/genfiles
 
