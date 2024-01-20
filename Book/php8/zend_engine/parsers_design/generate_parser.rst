@@ -25,20 +25,29 @@ Generating lexer/parser
 Yes, once your <php-src>/Zend/Makefile.frag is up to date you must relaunch <php-src>$ ./buildconf <php-build>$ <php-src>/configure
 
 Now, every time you run the compilation make will automatically generate the parser as needed.
-  
-  zend_language_parser.y
-  zend_language_scanner.l
 
-  zend_ini_parser.y
-  zend_ini_scanner.y
+Zend Engine use a .ini parser and a .php parser
 
-  ext/date/date-iso.y
-  ext/date/date-iso.l
-  ext/date/date.y
-  ext/date/date.l
+  - zend_language_parser.y
+  - zend_language_scanner.l
 
-  ext/json/parser.y
-  ext/json/lexer.l
+  - zend_ini_parser.y
+  - zend_ini_scanner.y
+
+In php, extensions also use parser
+
+  - ext/date/date-iso.y
+  - ext/date/date-iso.l
+  - ext/date/date.y
+  - ext/date/date.l
+
+  - ext/json/parser.y
+  - ext/json/lexer.l
+
+There are even extensions that use the Zend Engine language lexer
+
+- ext/tokenizer
+
 
 Advanced skill
 =============
