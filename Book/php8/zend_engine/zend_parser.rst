@@ -11,7 +11,7 @@ Contents:
 .. toctree::
     :maxdepth: 2
 
-    generation_processes/generate_parser.rst
+    lexer_parser/generation_processes.rst
     parsers_design/manage_error.rst
     parsers_design/location_column.rst
     parsers_design/globals_management.rst
